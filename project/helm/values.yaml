@@ -6,7 +6,7 @@ namespace:
 image:
   repository: gdbourne/techtrends
   tag: latest
-  imagePullPolicy : ifNotPresent
+  imagePullPolicy : IfNotPresent
 
 replicaCount: 1
 
