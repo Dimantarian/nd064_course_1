@@ -1,0 +1,35 @@
+## provide the name of the namespace
+namespace:
+  name: sandbox
+
+## define the image to execute with the Deployment 
+image:
+  repository: techtrends
+  tag: latest
+  imagePullPolicy : ifNotPresent
+
+replicaCount: 1
+
+resources:
+  limits:
+    memory: "128Mi"
+    cpu: "500m"
+  requests:
+    memory: "64Mi"
+    cpu: "250m"
+
+containerPort: 3111
+
+livenessProbe:
+  httpGet:
+    path: /healthz
+
+readinessProbe:
+  httpGet:
+    path: /healthz
+
+service:
+  port: 4111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
