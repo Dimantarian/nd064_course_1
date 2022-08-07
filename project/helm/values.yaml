@@ -27,6 +27,7 @@ livenessProbe:
 readinessProbe:
   httpGet:
     path: /healthz
+    
 
 service:
   port: 4111
