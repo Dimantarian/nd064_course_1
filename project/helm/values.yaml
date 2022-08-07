@@ -4,7 +4,7 @@ namespace:
 
 ## define the image to execute with the Deployment 
 image:
-  repository: techtrends
+  repository: gdbourne/techtrends
   tag: latest
   imagePullPolicy : ifNotPresent
 
