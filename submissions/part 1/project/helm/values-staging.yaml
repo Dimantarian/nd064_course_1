@@ -1,0 +1,16 @@
+## provide the name of the namespace
+namespace:
+  name: staging
+
+replicaCount: 3
+
+resources:
+  limits:
+    memory: "128Mi"
+    cpu: "500m"
+  requests:
+    memory: "90Mi"
+    cpu: "300m"
+
+service:
+  port: 5111

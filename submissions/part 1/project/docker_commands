@@ -1,0 +1,37 @@
+## Docker commands used to build the application 
+docker build -t techtrends -f Dockerfile .
+
+## Docker commands used to run the application
+docker run -p 7111:3111 --name tt -d techtrends
+
+## Docker commands used to get the application logs
+docker logs tt
+
+## Logs from the container running the TechTrends application
+ ```
+  * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+[2022-08-07 21:00:50,578] WARNING in _internal:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+[2022-08-07 21:00:50,578] INFO in _internal:  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+[2022-08-07 21:01:04,372] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:04] "GET / HTTP/1.1" 200 -
+[2022-08-07 21:01:04,392] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:04] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 21:01:10,087] INFO in app: Article 2020 CNCF Annual Report retrieved!
+[2022-08-07 21:01:10,089] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:10] "GET /1 HTTP/1.1" 200 -
+[2022-08-07 21:01:10,101] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:10] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 21:01:15,599] INFO in app: About us page retrieved!
+[2022-08-07 21:01:15,601] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:15] "GET /about HTTP/1.1" 200 -
+[2022-08-07 21:01:15,612] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:15] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 21:01:21,080] ERROR in app: 404: No articles relating to Post-ID:15 could be found
+[2022-08-07 21:01:21,082] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:21] "GET /15 HTTP/1.1" 404 -
+[2022-08-07 21:01:21,092] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:21] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 21:01:24,530] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:24] "GET /create HTTP/1.1" 200 -
+[2022-08-07 21:01:24,539] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:24] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 21:01:34,870] INFO in app: A new article: new post has been created!
+[2022-08-07 21:01:34,870] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:34] "POST /create HTTP/1.1" 302 -
+[2022-08-07 21:01:34,875] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:34] "GET / HTTP/1.1" 200 -
+[2022-08-07 21:01:34,893] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 21:01:34] "GET /static/css/main.css HTTP/1.1" 304 -
+```
